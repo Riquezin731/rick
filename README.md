@@ -1,0 +1,2 @@
+# rick
+trabalho mobile
