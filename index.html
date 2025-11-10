@@ -49,7 +49,6 @@
     .hero {
       text-align: center;
       padding: 100px 20px;
-      position: relative;
     }
     .hero h1 {
       font-size: 3rem;
@@ -103,10 +102,25 @@
       box-shadow: 0 0 20px rgba(123,92,255,0.3);
       transition: transform 0.3s, box-shadow 0.3s;
       text-align: center;
+      flex: 1 1 250px;
     }
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 0 30px var(--neon2);
+    }
+    .cards-container {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    form input, form textarea {
+      width:100%;
+      padding:12px;
+      margin:10px 0;
+      border-radius:8px;
+      border:1px solid var(--neon1);
+      background:var(--card);
+      color:var(--text);
     }
     footer {
       background: rgba(20,20,40,0.9);
@@ -121,49 +135,83 @@
   <header>
     <div class="logo">Henrique Store</div>
     <nav>
-      <a href="#">Início</a>
-      <a href="#">Loja</a>
-      <a href="#">Categorias</a>
-      <a href="#">Contato</a>
+      <a href="#inicio">Início</a>
+      <a href="#loja">Loja</a>
+      <a href="#categorias">Categorias</a>
+      <a href="#contato">Contato</a>
     </nav>
   </header>
 
-  <section class="hero">
+  <!-- Início -->
+  <section id="inicio" class="hero">
     <h1>Gamers do Futuro estão aqui...</h1>
     <p>Uma experiência cyberpunk para quem exige o melhor.</p>
     <button class="btn">Explorar Loja</button>
   </section>
 
-  <section class="section">
-    <h2>Jogos em Tendência</h2>
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;">
+  <!-- Loja -->
+  <section id="loja" class="section loja">
+    <h2>Loja Futurista</h2>
+    <p style="text-align:center;color:var(--muted);">Explore nosso catálogo com ofertas exclusivas e lançamentos do futuro.</p>
+    <div class="cards-container">
       <div class="card">
-        <h3>Assassin's Creed Neon</h3>
-        <p>R$ 149,90</p>
+        <h3>Console Quantum</h3>
+        <p>R$ 2.499,90</p>
         <button class="btn">Comprar</button>
       </div>
       <div class="card">
-        <h3>Corrida Cósmica</h3>
-        <p>R$ 229,90</p>
+        <h3>Headset Holográfico</h3>
+        <p>R$ 799,90</p>
         <button class="btn">Comprar</button>
       </div>
       <div class="card">
-        <h3>Reinos Antigos</h3>
-        <p>R$ 199,90</p>
+        <h3>Controle Neon</h3>
+        <p>R$ 349,90</p>
         <button class="btn">Comprar</button>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <h2>Newsletter Futurista</h2>
-    <p style="text-align:center;color:var(--muted);">Assine e receba descontos exclusivos e novidades do futuro.</p>
-    <div style="text-align:center;margin-top:20px;">
-      <input type="email" placeholder="Seu e-mail..." style="padding:10px;border-radius:8px;border:1px solid var(--neon1);background:var(--card);color:var(--text);">
-      <button class="btn">Assinar</button>
+  <!-- Categorias -->
+  <section id="categorias" class="section categorias">
+    <h2>Categorias</h2>
+    <div class="cards-container">
+      <div class="card">
+        <h3>Ação</h3>
+        <p>Combates intensos e cenários futuristas.</p>
+        <button class="btn">Explorar</button>
+      </div>
+      <div class="card">
+        <h3>RPG</h3>
+        <p>Mundos digitais e jornadas épicas.</p>
+        <button class="btn">Explorar</button>
+      </div>
+      <div class="card">
+        <h3>Corrida</h3>
+        <p>Velocidade máxima em pistas neon.</p>
+        <button class="btn">Explorar</button>
+      </div>
+      <div class="card">
+        <h3>VR & AR</h3>
+        <p>Imersão total em realidade virtual e aumentada.</p>
+        <button class="btn">Explorar</button>
+      </div>
     </div>
   </section>
 
+  <!-- Contato -->
+  <section id="contato" class="section contato">
+    <h2>Contato</h2>
+    <p style="text-align:center;color:var(--muted);">Fale com nossa equipe futurista. Estamos prontos para ajudar.</p>
+    <form style="max-width:600px;margin:0 auto;text-align:center;">
+      <input type="text" placeholder="Seu nome" required>
+      <input type="email" placeholder="Seu e-mail" required>
+      <textarea placeholder="Sua mensagem..." rows="5" required></textarea>
+      <button class="btn">Enviar Mensagem</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <p>© 2048 Henrique Store Futurista — Todos os direitos reservados.</p>
   </footer>
